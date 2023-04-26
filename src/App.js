@@ -1,11 +1,12 @@
-import { Button } from '@mui/material';
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
+import { route } from './Pages/Routes/Route/Route';
 
 function App() {
-
+  
   return (
-    <div className="App">
-        <Button variant='contained'>Click me</Button>
+    <div className="">
+      <RouterProvider router={route}></RouterProvider>
     </div>
   );
 }
