@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Card, CardContent, Grid, TextField, Button, Typography, Box } from '@mui/material'
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { AuthContext } from '../../Context/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 const Login = () => {
+    const { register, handleSubmit } = useForm();
+    const { loginUser } = useContext(AuthContext);
 
-    const {register, handleSubmit} = useForm();
-    const handleLoginForm = (data)=> {
-        console.log(data)
+    const handleLoginForm = (data, event) => {
+        // console.log(data)
+        loginUser(data.email, data.password)
+        .then(result=> {
+            const user = result.user;
+            console.log(user);
+            toast.success('User Login Successfully')
+            event.target.reset();
+        })
+        .catch(err=>{
+            console.log(err);
+        })
     }
 
     return (
@@ -32,10 +45,10 @@ const Login = () => {
                         <Grid container spacing={2}>
 
                             <Grid xs={12} item >
-                                <TextField variant='outlined' label='Email *' {...register('email', {required: true})} name='email' placeholder='Enter your Email' fullWidth></TextField>
+                                <TextField variant='outlined' label='Email *' {...register('email', { required: true })} name='email' placeholder='Enter your Email' fullWidth></TextField>
                             </Grid>
                             <Grid xs={12} item >
-                                <TextField variant='outlined' label='Password *' {...register('password', {required: true})} name='password' type='password' placeholder='Enter your Password' fullWidth></TextField>
+                                <TextField variant='outlined' label='Password *' {...register('password', { required: true })} name='password' type='password' placeholder='Enter your Password' fullWidth></TextField>
                             </Grid>
                             <Typography sx={{
                                 paddingLeft: 2,

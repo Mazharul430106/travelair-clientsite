@@ -14,12 +14,20 @@ import Typography from '@mui/material/Typography';
 import '../Navbar/Navbar.css'
 import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
-
+import { useContext } from 'react';
+import { AuthContext } from '../../Context/AuthProvider';
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Services', 'Products', 'Contact', 'Register'];
 
 export default function Navbar(props) {
+
+    const { user } = useContext(AuthContext);
+    console.log(user);
+
+
+
+
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -39,7 +47,7 @@ export default function Navbar(props) {
                 {navItems.map((item) => (
                     <ListItem key={item} disablePadding>
                         <ListItemButton sx={{ textAlign: 'center' }}>
-                            
+
                             <Link to={`/${item}`}>
                                 {item}
                             </Link>
@@ -86,9 +94,19 @@ export default function Navbar(props) {
                                 <Link to={`/${item}`} key={item} sx={{ color: '#fff', }}>
                                     {item}
                                 </Link>
+
                             </Button>
                         ))}
+
                     </Box>
+                    <Box>
+                        <>
+                            {
+                                user?.email && <Link>{user?.email}</Link>
+                            }
+                        </>
+                    </Box>
+
                 </Toolbar>
             </AppBar>
             <Box component="nav">
