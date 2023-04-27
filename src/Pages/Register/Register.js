@@ -7,14 +7,26 @@ import {
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../Context/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 const Register = () => {
     const { register, handleSubmit } = useForm();
-    const user = useContext(AuthContext);
-    console.log(user);
 
-    const handleRegisterForm = (data) => {
-        console.log(data);
+    const {createUser} = useContext(AuthContext);
+    const handleRegisterForm = (data, event) => {
+        // console.log(data);
+
+        createUser(data.email, data.password)
+        .then((result)=>{
+            const user = result.user;
+            console.log(user)
+            toast.success('User Created Successfully');
+            event.target.reset();
+        })
+        .catch(err=>{
+            console.log(err);
+        })
+
     }
 
     return (
@@ -45,16 +57,16 @@ const Register = () => {
                             </Grid>
                             <Grid xs={12} item>
                                 <FormControl fullWidth  >
-                                    <InputLabel variant='outlined' label='Role' id="demo-simple-select-label" placeholder='Select Your Role'>Role</InputLabel>
+                                    <InputLabel variant='outlined' label='Role' id="demo-simple-select-label" placeholder='Select Your Role'>Role *</InputLabel>
                                     <Select
                                         labelId="demo-simple-select-label"
                                         id="demo-simple-select"
                                         label="Role"
                                         name='select'
-                                        {...register('select')}
+                                        {...register('select', {required: true})}
                                     >
                                         <MenuItem value={'User'}>User</MenuItem>
-                                        <MenuItem value={'Selar'}>Selar</MenuItem>
+                                        <MenuItem value={'Saler'}>Saler</MenuItem>
                                         <MenuItem value={'Admin'}>Admin</MenuItem>
                                     </Select>
                                 </FormControl>
