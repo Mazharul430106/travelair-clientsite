@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
     Card, CardContent, Grid, TextField,
     Button, Typography, Box, FormControl, 
@@ -6,9 +6,12 @@ import {
 } from '@mui/material'
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { AuthContext } from '../../Context/AuthProvider';
 
 const Register = () => {
     const { register, handleSubmit } = useForm();
+    const user = useContext(AuthContext);
+    console.log(user);
 
     const handleRegisterForm = (data) => {
         console.log(data);

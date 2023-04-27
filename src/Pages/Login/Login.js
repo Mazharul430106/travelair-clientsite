@@ -10,7 +10,6 @@ const Login = () => {
         console.log(data)
     }
 
-
     return (
         <div style={{ padding: '15px' }}>
             <Card sx={{
@@ -24,7 +23,6 @@ const Login = () => {
                 }}>
                     Login
                 </Typography>
-
 
                 <CardContent sx={{
                     padding: 2,

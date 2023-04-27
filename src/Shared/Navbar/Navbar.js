@@ -39,7 +39,7 @@ export default function Navbar(props) {
                 {navItems.map((item) => (
                     <ListItem key={item} disablePadding>
                         <ListItemButton sx={{ textAlign: 'center' }}>
-
+                            
                             <Link to={`/${item}`}>
                                 {item}
                             </Link>
