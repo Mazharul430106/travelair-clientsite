@@ -1,8 +1,16 @@
 import React from 'react';
 import { Card, CardContent, Grid, TextField, Button, Typography, Box } from '@mui/material'
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 const Login = () => {
+
+    const {register, handleSubmit} = useForm();
+    const handleLoginForm = (data)=> {
+        console.log(data)
+    }
+
+
     return (
         <div style={{ padding: '15px' }}>
             <Card sx={{
@@ -22,14 +30,14 @@ const Login = () => {
                     padding: 2,
                     paddingBottom: '10px',
                 }}>
-                    <form action="">
+                    <form onSubmit={handleSubmit(handleLoginForm)}>
                         <Grid container spacing={2}>
 
                             <Grid xs={12} item >
-                                <TextField variant='outlined' label='Email *' placeholder='Enter your Email' fullWidth></TextField>
+                                <TextField variant='outlined' label='Email *' {...register('email', {required: true})} name='email' placeholder='Enter your Email' fullWidth></TextField>
                             </Grid>
                             <Grid xs={12} item >
-                                <TextField variant='outlined' label='Password *' placeholder='Enter your Password' fullWidth></TextField>
+                                <TextField variant='outlined' label='Password *' {...register('password', {required: true})} name='password' type='password' placeholder='Enter your Password' fullWidth></TextField>
                             </Grid>
                             <Typography sx={{
                                 paddingLeft: 2,
@@ -53,9 +61,7 @@ const Login = () => {
                         OR
                     </Typography>
 
-                    <Grid xs={12} item sx={{
-                        // marginTop: 3
-                    }} >
+                    <Grid xs={12} item>
                         <Button type='submit' variant='contained' color='primary' fullWidth sx={{ padding: '15px' }}>Login with Google</Button>
                     </Grid>
                     <Box sx={{
