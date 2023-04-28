@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Card, CardContent, Grid, TextField, Button, Typography, Box } from '@mui/material'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../Context/AuthProvider';
 import { toast } from 'react-hot-toast';
@@ -10,6 +10,10 @@ const Login = () => {
     const { register, handleSubmit } = useForm();
     const { loginUser, googleLogin } = useContext(AuthContext);
     const providerLogin = new GoogleAuthProvider();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+
 
     const handleLoginForm = (data, event) => {
         // console.log(data)
@@ -19,6 +23,7 @@ const Login = () => {
             console.log(user);
             toast.success('User Login Successfully')
             event.target.reset();
+            navigate(from, { replace: true });
         })
         .catch(err=>{
             console.log(err);

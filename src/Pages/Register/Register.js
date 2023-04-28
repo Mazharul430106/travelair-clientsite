@@ -11,8 +11,10 @@ import { toast } from 'react-hot-toast';
 
 const Register = () => {
     const { register, handleSubmit } = useForm();
-
     const {createUser, updateUserProfile, verifyEmail} = useContext(AuthContext);
+    
+  
+
 
     const handleRegisterForm = (data, event) => {
         // console.log(data);
@@ -37,7 +39,7 @@ const Register = () => {
             })
 
             handleEmailVerification();
-            toast.success('Please verify your email address');
+            toast.success('Please verify your email address')
 
         })
         .catch(err=>{
@@ -54,8 +56,6 @@ const Register = () => {
             console.log(error)
         })
     }
-
-
 
     return (
         <div style={{ padding: '15px' }}>

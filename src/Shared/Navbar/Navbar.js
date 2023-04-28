@@ -23,7 +23,7 @@ const drawerWidth = 240;
 export default function Navbar(props) {
 
     const { user, logoutUser } = useContext(AuthContext);
-    // console.log(user);
+    console.log(user);
 
 
     const handleLogout = () => {
