@@ -12,7 +12,8 @@ import { toast } from 'react-hot-toast';
 const Register = () => {
     const { register, handleSubmit } = useForm();
 
-    const {createUser} = useContext(AuthContext);
+    const {createUser, updateUserProfile, verifyEmail} = useContext(AuthContext);
+
     const handleRegisterForm = (data, event) => {
         // console.log(data);
 
@@ -22,12 +23,39 @@ const Register = () => {
             console.log(user)
             toast.success('User Created Successfully');
             event.target.reset();
+            const profile = {
+                displayName : data.name,
+                photoURL: data.photo
+            }
+
+            updateUserProfile(profile)
+            .then(()=>{
+
+            })
+            .catch(err=>{
+                console.log(err)
+            })
+
+            handleEmailVerification();
+            toast.success('Please verify your email address');
+
         })
         .catch(err=>{
             console.log(err);
         })
-
     }
+
+    const handleEmailVerification = ()=>{
+        verifyEmail()
+        .then(()=>{
+
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+    }
+
+
 
     return (
         <div style={{ padding: '15px' }}>
@@ -56,7 +84,7 @@ const Register = () => {
                                 <TextField variant='outlined' label='Photo *' {...register('photo', { required: true })} name='photo' placeholder='Enter your Photo Link' fullWidth></TextField>
                             </Grid>
                             <Grid xs={12} item>
-                                <FormControl fullWidth  >
+                                <FormControl fullWidth >
                                     <InputLabel variant='outlined' label='Role' id="demo-simple-select-label" placeholder='Select Your Role'>Role *</InputLabel>
                                     <Select
                                         labelId="demo-simple-select-label"

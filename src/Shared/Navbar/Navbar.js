@@ -6,26 +6,35 @@ import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import '../Navbar/Navbar.css'
 import { Link } from 'react-router-dom';
-import { Button } from '@mui/material';
 import { useContext } from 'react';
 import { AuthContext } from '../../Context/AuthProvider';
+import PersonIcon from '@mui/icons-material/Person';
+import { toast } from 'react-hot-toast';
+
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Services', 'Products', 'Contact', 'Register'];
+// const navItems = ['Home', 'About', 'Services', 'Products', 'Contact', 'Register'];
 
 export default function Navbar(props) {
 
-    const { user } = useContext(AuthContext);
-    console.log(user);
+    const { user, logoutUser } = useContext(AuthContext);
+    // console.log(user);
 
 
+    const handleLogout = () => {
+        logoutUser()
+            .then(() => {
+                toast.success('user logout successfully')
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
 
 
     const { window } = props;
@@ -43,8 +52,8 @@ export default function Navbar(props) {
                 </Link>
             </Typography>
             <Divider />
-            <List>
-                {navItems.map((item) => (
+            <List >
+                {/* {navItems.map((item) => (
                     <ListItem key={item} disablePadding>
                         <ListItemButton sx={{ textAlign: 'center' }}>
 
@@ -53,7 +62,14 @@ export default function Navbar(props) {
                             </Link>
                         </ListItemButton>
                     </ListItem>
-                ))}
+                ))} */}
+
+                <Link to='/home' style={{ paddingRight: '25px', textTransform: 'uppercase' }}>Home</Link>
+                <Link to='/about' style={{ paddingRight: '25px', textTransform: 'uppercase' }} >About</Link>
+                <Link to='/services' style={{ paddingRight: '25px', textTransform: 'uppercase' }} >Service</Link>
+                <Link to='/products' style={{ paddingRight: '25px', textTransform: 'uppercase' }} >Products</Link>
+                <Link to='/contact' style={{ paddingRight: '25px', textTransform: 'uppercase' }} >Contact</Link>
+                <Link to='/register' style={{ paddingRight: '25px', textTransform: 'uppercase' }} >Register</Link>
             </List>
         </Box>
     );
@@ -89,24 +105,35 @@ export default function Navbar(props) {
                         </Link>
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block', } }}>
-                        {navItems.map((item) => (
-                            <Button variant='contined'>
-                                <Link to={`/${item}`} key={item} sx={{ color: '#fff', }}>
-                                    {item}
-                                </Link>
 
-                            </Button>
-                        ))}
+                        <Link to='/home' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }}>Home</Link>
+                        <Link to='/about' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >About</Link>
+                        <Link to='/services' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >Service</Link>
+                        <Link to='/products' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >Products</Link>
+                        <Link to='/contact' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >Contact</Link>
+
+
+                        <>
+                            {
+                                user?.uid ?
+
+                                    <Link onClick={handleLogout} style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >Logout</Link>
+                                    :
+                                    <Link to='/register' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >Register</Link>
+                            }
+                        </>
+
 
                     </Box>
                     <Box>
-                        <>
-                            {
-                                user?.email && <Link>{user?.email}</Link>
-                            }
-                        </>
-                    </Box>
 
+                        {
+                            user?.uid ? <img title={user?.displayName} src={user?.photoURL} className='w-[40px] h-[40px] rounded-full cursor-pointer' alt="" />
+                                :
+                                <PersonIcon></PersonIcon>
+                        }
+
+                    </Box>
                 </Toolbar>
             </AppBar>
             <Box component="nav">
