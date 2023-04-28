@@ -1,24 +1,28 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../../Layout/Main";
-import { Home } from "@mui/icons-material";
+
 import Products from "../../Products/Products";
 import Services from "../../Services/Services";
 import Blog from "../../Blog/Blog";
 import Contact from "../../Contact/Contact";
-import About from "../../About/About";
+
 import Register from "../../Register/Register";
 import Login from "../../Login/Login";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import { Box } from "@mui/material";
+import Home from "../../Home/Home";
+import About from "../../About/About";
 
 export const route = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
         children: [
+          
             {
                 path: '/home',
                 element: <Home></Home>
-            }, 
+            },
             {
                 path: '/about',
                 element: <About></About>
@@ -46,6 +50,10 @@ export const route = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '*',
+                element: <Box>Page Not Found</Box>
             }
            
         ]

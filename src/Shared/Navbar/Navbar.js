@@ -18,7 +18,6 @@ import { toast } from 'react-hot-toast';
 
 
 const drawerWidth = 240;
-// const navItems = ['Home', 'About', 'Services', 'Products', 'Contact', 'Register'];
 
 export default function Navbar(props) {
 
@@ -53,18 +52,8 @@ export default function Navbar(props) {
             </Typography>
             <Divider />
             <List >
-                {/* {navItems.map((item) => (
-                    <ListItem key={item} disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }}>
-
-                            <Link to={`/${item}`}>
-                                {item}
-                            </Link>
-                        </ListItemButton>
-                    </ListItem>
-                ))} */}
-
-                <Link to='/home' style={{ paddingRight: '25px', textTransform: 'uppercase' }}>Home</Link>
+              
+                <Link to='/home' style={{ paddingRight: '25px', textTransform: 'uppercase' }} >Home</Link>
                 <Link to='/about' style={{ paddingRight: '25px', textTransform: 'uppercase' }} >About</Link>
                 <Link to='/services' style={{ paddingRight: '25px', textTransform: 'uppercase' }} >Service</Link>
                 <Link to='/products' style={{ paddingRight: '25px', textTransform: 'uppercase' }} >Products</Link>
@@ -106,7 +95,7 @@ export default function Navbar(props) {
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block', } }}>
 
-                        <Link to='/home' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }}>Home</Link>
+                        <Link to='/home' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >Home</Link>
                         <Link to='/about' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >About</Link>
                         <Link to='/services' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >Service</Link>
                         <Link to='/products' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >Products</Link>
