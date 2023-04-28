@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../Context/AuthProvider';
 import { toast } from 'react-hot-toast';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
     const { register, handleSubmit } = useForm();
-    const { loginUser } = useContext(AuthContext);
+    const { loginUser, googleLogin } = useContext(AuthContext);
+    const providerLogin = new GoogleAuthProvider();
 
     const handleLoginForm = (data, event) => {
         // console.log(data)
@@ -17,6 +19,17 @@ const Login = () => {
             console.log(user);
             toast.success('User Login Successfully')
             event.target.reset();
+        })
+        .catch(err=>{
+            console.log(err);
+        })
+    }
+
+    const handleGoogleLogin = ()=>{
+        googleLogin(providerLogin)
+        .then(result=>{
+            const user = result.user;
+            console.log(user);
         })
         .catch(err=>{
             console.log(err);
@@ -73,7 +86,7 @@ const Login = () => {
                     </Typography>
 
                     <Grid xs={12} item>
-                        <Button type='submit' variant='contained' color='primary' fullWidth sx={{ padding: '15px' }}>Login with Google</Button>
+                        <Button onClick={handleGoogleLogin} type='submit' variant='contained' color='primary' fullWidth sx={{ padding: '15px' }}>Login with Google</Button>
                     </Grid>
                     <Box sx={{
                         display: 'flex',

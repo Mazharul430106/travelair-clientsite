@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { app } from '../Firebase/Firebase.init';
 
 export const AuthContext = createContext();
@@ -9,7 +9,14 @@ const auth = getAuth(app)
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
 
-    // create user.
+    // Google login.
+    const googleLogin = (provider) => {
+        return signInWithPopup(auth, provider)
+    }
+
+
+
+    // Create user.
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
@@ -25,18 +32,14 @@ const AuthProvider = ({ children }) => {
     }
 
     // Logout User.
-    const logoutUser = ()=>{
+    const logoutUser = () => {
         return signOut(auth);
     }
 
     // Email verification.
-
-    const verifyEmail = ()=>{
+    const verifyEmail = () => {
         return sendEmailVerification(auth.currentUser);
     }
-
-
-
 
     // State Change User.
     useEffect(() => {
@@ -47,7 +50,7 @@ const AuthProvider = ({ children }) => {
     }, [])
 
 
-    const authInfo = { createUser, loginUser, user, updateUserProfile, logoutUser, verifyEmail }
+    const authInfo = { createUser, loginUser, user, updateUserProfile, logoutUser, verifyEmail, googleLogin }
 
     return (
         <AuthContext.Provider value={authInfo}>
