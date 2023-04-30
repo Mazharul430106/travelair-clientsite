@@ -52,7 +52,6 @@ export default function Navbar(props) {
             </Typography>
             <Divider />
             <List >
-              
                 <Link to='/home' style={{ paddingRight: '25px', textTransform: 'uppercase' }} >Home</Link>
                 <Link to='/about' style={{ paddingRight: '25px', textTransform: 'uppercase' }} >About</Link>
                 <Link to='/services' style={{ paddingRight: '25px', textTransform: 'uppercase' }} >Service</Link>

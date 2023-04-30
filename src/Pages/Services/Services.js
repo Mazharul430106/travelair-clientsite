@@ -1,6 +1,7 @@
 import { Box, Grid } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
     const [services, setServices] = useState([]);
@@ -15,13 +16,13 @@ const Services = () => {
 
     return (
         <Box paddingX={7}>
-            <Typography variant='h4' sx={{
+            {/* <Typography variant='h4' sx={{
                 textAlign: 'center',
                 marginTop: '60px',
                 marginBottom: '50px'
             }} >
                 Our Services
-            </Typography>
+            </Typography> */}
 
             <Grid container spacing={2} >
                 {
@@ -43,7 +44,7 @@ const Services = () => {
                             </CardContent>
                             <CardActions>
                                 <Button size="small" >Share</Button>
-                                <Button size="small">Learn More</Button>
+                                <Button size="small"><Link to={`/checkoutPage/${service._id}`}>Learn More</Link></Button>
                             </CardActions>
                         </Card>
 
