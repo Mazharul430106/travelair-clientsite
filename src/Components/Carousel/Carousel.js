@@ -67,17 +67,14 @@ const Carousel = () => {
         ]
     };
 
-
-
     return (
-        <Box>
+        <Box sx={{marginTop:'1px'}}>
             <Slider {...settings}>
                 {
                     carouselItems.map(singleItem => <DisplayCarousel singleItem={singleItem} ></DisplayCarousel>)
                 }
             </Slider>
         </Box>
-
 
     );
 };

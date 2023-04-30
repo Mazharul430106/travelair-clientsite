@@ -24,7 +24,6 @@ export default function Navbar(props) {
     const { user, logoutUser } = useContext(AuthContext);
     console.log(user);
 
-
     const handleLogout = () => {
         logoutUser()
             .then(() => {
@@ -34,7 +33,6 @@ export default function Navbar(props) {
                 console.log(err)
             })
     }
-
 
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -100,7 +98,6 @@ export default function Navbar(props) {
                         <Link to='/products' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >Products</Link>
                         <Link to='/contact' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >Contact</Link>
 
-
                         <>
                             {
                                 user?.uid ?
@@ -141,7 +138,7 @@ export default function Navbar(props) {
                     {drawer}
                 </Drawer>
             </Box>
-            <Box component="main" sx={{ p: 3 }}>
+            <Box component="main">
                 <Toolbar />
             </Box>
         </Box>

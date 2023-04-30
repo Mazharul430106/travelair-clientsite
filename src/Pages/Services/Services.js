@@ -16,13 +16,12 @@ const Services = () => {
 
     return (
         <Box paddingX={7}>
-            {/* <Typography variant='h4' sx={{
+            <Typography variant='h4' sx={{
                 textAlign: 'center',
-                marginTop: '60px',
                 marginBottom: '50px'
             }} >
                 Our Services
-            </Typography> */}
+            </Typography>
 
             <Grid container spacing={2} >
                 {
