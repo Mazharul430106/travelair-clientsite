@@ -95,7 +95,7 @@ export default function Navbar(props) {
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block', } }}>
 
-                        <Link to='/home' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >Home</Link>
+                        <Link to='/' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >Home</Link>
                         <Link to='/about' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >About</Link>
                         <Link to='/services' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >Service</Link>
                         <Link to='/products' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >Products</Link>

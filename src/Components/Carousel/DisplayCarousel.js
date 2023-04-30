@@ -5,7 +5,7 @@ const DisplayCarousel = ({ singleItem }) => {
     console.log(singleItem)
     return (
         <Box>
-           <img src={singleItem.img} className='w-full max-h-[600px]' alt="" />
+           <img src={singleItem.img} className='w-full max-h-[550px]' alt="" />
         </Box>
     );
 };
