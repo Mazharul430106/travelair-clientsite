@@ -70,7 +70,7 @@ export default function Navbar(props) {
             <CssBaseline />
             <AppBar component="nav" sx={
                 {
-                    bgcolor: 'gray',
+                    bgcolor: 'primary',
                     color: 'white'
                 }
             }>

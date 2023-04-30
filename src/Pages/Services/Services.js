@@ -14,7 +14,7 @@ const Services = () => {
 
 
     return (
-        <Box className='px-[7%]'>
+        <Box paddingX={7}>
             <Typography variant='h4' sx={{
                 textAlign: 'center',
                 marginTop: '60px',
@@ -42,7 +42,7 @@ const Services = () => {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button size="small">Share</Button>
+                                <Button size="small" >Share</Button>
                                 <Button size="small">Learn More</Button>
                             </CardActions>
                         </Card>
