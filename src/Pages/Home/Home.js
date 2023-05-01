@@ -7,19 +7,17 @@ import Contact from '../Contact/Contact';
 import OurTeam from '../../Components/OurTeam/OurTeam';
 import Footer from '../../Shared/Footer/Footer';
 import FaqPage from '../../Components/FaqPage/FaqPage';
+import Newsletter from '../Newsletter/Newsletter';
 
 const Home = () => {
     return (
         <Box>
             <Carousel></Carousel>
-            <Box sx={{
-                paddingTop: '80px'
-            }}>
-                <About></About>
-            </Box>
+            <About></About>
             <Services></Services>
             <OurTeam></OurTeam>
             <FaqPage></FaqPage>
+            <Newsletter></Newsletter>
             <Contact></Contact>
         </Box>
     );

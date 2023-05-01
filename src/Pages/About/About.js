@@ -11,7 +11,9 @@ const About = () => {
 
             <Typography variant='h4' sx={{
                 textAlign: 'center',
-                marginBottom: '50px'
+                marginBottom: '50px',
+                paddingTop: '80px'
+
             }}>
                 About Us
             </Typography>
