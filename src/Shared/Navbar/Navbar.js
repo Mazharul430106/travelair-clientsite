@@ -67,8 +67,11 @@ export default function Navbar(props) {
             <CssBaseline />
             <AppBar component="nav" sx={
                 {
-                    bgcolor: 'primary',
-                    color: 'white'
+                    bgcolor: 'white',
+                    color: 'black',
+                    // '&:hover':{
+                    //     color: '#33bccd'
+                    // }
                 }
             }>
                 <Toolbar>
@@ -82,29 +85,29 @@ export default function Navbar(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography
-                        variant="h6"
+                        variant="h4"
                         component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, }}
                     >
                         <Link to='/'>
-                            TravelAir
+                            Travel<span style={{ color: '#33bccd' }}>Air</span>
                         </Link>
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block', } }}>
 
-                        <Link to='/' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >Home</Link>
-                        <Link to='/about' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >About</Link>
-                        <Link to='/services' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >Service</Link>
-                        <Link to='/products' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >Products</Link>
-                        <Link to='/contact' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >Contact</Link>
+                        <Link to='/' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px', fontWeight: 600 }} >Home</Link>
+                        <Link to='/about' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px', fontWeight: 600 }} >About</Link>
+                        <Link to='/services' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px', fontWeight: 600 }} >Service</Link>
+                        <Link to='/products' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px', fontWeight: 600 }} >Products</Link>
+                        <Link to='/contact' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px', fontWeight: 600 }} >Contact</Link>
 
                         <>
                             {
                                 user?.uid ?
 
-                                    <Link onClick={handleLogout} style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >Logout</Link>
+                                    <Link onClick={handleLogout} style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px', fontWeight: 600 }} >Logout</Link>
                                     :
-                                    <Link to='/register' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px' }} >Register</Link>
+                                    <Link to='/register' style={{ paddingRight: '25px', textTransform: 'uppercase', fontSize: '15px', fontWeight: 600 }} >Register</Link>
                             }
                         </>
 
@@ -117,9 +120,9 @@ export default function Navbar(props) {
                                 width: '40px',
                                 height: '40px',
                                 borderRadius: '50%',
-                                
+
                             }}>
-                                <img title={user?.displayName} src={user?.photoURL} style={{width: '100%', height: '100%', borderRadius:'50%', cursor:'pointer' }} alt="" />
+                                <img title={user?.displayName} src={user?.photoURL} style={{ width: '100%', height: '100%', borderRadius: '50%', cursor: 'pointer' }} alt="" />
                             </Box>
                                 :
                                 <PersonIcon></PersonIcon>

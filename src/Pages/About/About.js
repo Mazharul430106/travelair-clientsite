@@ -5,7 +5,9 @@ import WifiCalling3Icon from '@mui/icons-material/WifiCalling3';
 import { Link } from 'react-router-dom';
 const About = () => {
     return (
-        <Box>
+        <Box sx={{
+            // border: '1px solid black'
+        }}>
 
             <Typography variant='h4' sx={{
                 textAlign: 'center',
@@ -54,8 +56,7 @@ const About = () => {
                         display: 'flex',
                         alignItems: 'center',
                         gap: 5,
-                        marginY: 4
-
+                        marginTop: 4
                     }}>
                         <Grid item xs={12} md={6} lg={6}>
                             <Link to=''>

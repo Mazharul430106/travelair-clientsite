@@ -5,31 +5,22 @@ import About from '../About/About';
 import { Box } from '@mui/material';
 import Contact from '../Contact/Contact';
 import OurTeam from '../../Components/OurTeam/OurTeam';
+import Footer from '../../Shared/Footer/Footer';
+import FaqPage from '../../Components/FaqPage/FaqPage';
 
 const Home = () => {
     return (
         <Box>
-            <Box>
-                <Carousel></Carousel>
-            </Box>
+            <Carousel></Carousel>
             <Box sx={{
                 paddingTop: '80px'
             }}>
                 <About></About>
             </Box>
-            <Box sx={{
-                paddingTop: '80px'
-            }}>
-                <Services></Services>
-            </Box>
-            <Box >
-                <OurTeam></OurTeam>
-            </Box>
-
-            <Box>
-                <Contact></Contact>
-            </Box>
-
+            <Services></Services>
+            <OurTeam></OurTeam>
+            <FaqPage></FaqPage>
+            <Contact></Contact>
         </Box>
     );
 };
