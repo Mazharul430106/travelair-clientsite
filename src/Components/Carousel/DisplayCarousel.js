@@ -1,11 +1,12 @@
-import { Box } from '@mui/material';
+import { Box, CardMedia } from '@mui/material';
 import React from 'react';
 
 const DisplayCarousel = ({ singleItem }) => {
     console.log(singleItem)
+    const {img, title, desc} = singleItem;
     return (
         <Box>
-           <img src={singleItem.img} className='w-full max-h-[550px]' alt="" />
+           <img src={img} style={{width: '100%',  }}  alt="" />
         </Box>
     );
 };

@@ -113,7 +113,14 @@ export default function Navbar(props) {
                     <Box>
 
                         {
-                            user?.uid ? <img title={user?.displayName} src={user?.photoURL} className='w-[40px] h-[40px] rounded-full cursor-pointer' alt="" />
+                            user?.uid ? <Box sx={{
+                                width: '40px',
+                                height: '40px',
+                                borderRadius: '50%',
+                                
+                            }}>
+                                <img title={user?.displayName} src={user?.photoURL} style={{width: '100%', height: '100%', borderRadius:'50%', cursor:'pointer' }} alt="" />
+                            </Box>
                                 :
                                 <PersonIcon></PersonIcon>
                         }

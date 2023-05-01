@@ -23,7 +23,7 @@ const Services = () => {
                 Our Services
             </Typography>
 
-            <Grid container spacing={2} >
+            <Grid container spacing={4} >
                 {
                     services.map(service => <Grid item xs={12} md={6} lg={3}>
 
@@ -42,7 +42,6 @@ const Services = () => {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button size="small" >Share</Button>
                                 <Button size="small"><Link to={`/checkoutPage/${service._id}`}>Learn More</Link></Button>
                             </CardActions>
                         </Card>

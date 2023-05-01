@@ -4,6 +4,7 @@ import Services from '../Services/Services';
 import About from '../About/About';
 import { Box } from '@mui/material';
 import Contact from '../Contact/Contact';
+import OurTeam from '../../Components/OurTeam/OurTeam';
 
 const Home = () => {
     return (
@@ -12,7 +13,7 @@ const Home = () => {
                 <Carousel></Carousel>
             </Box>
             <Box sx={{
-                paddingTop: '80px' 
+                paddingTop: '80px'
             }}>
                 <About></About>
             </Box>
@@ -21,6 +22,10 @@ const Home = () => {
             }}>
                 <Services></Services>
             </Box>
+            <Box >
+                <OurTeam></OurTeam>
+            </Box>
+
             <Box>
                 <Contact></Contact>
             </Box>
