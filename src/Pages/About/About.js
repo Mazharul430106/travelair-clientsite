@@ -13,7 +13,6 @@ const About = () => {
                 textAlign: 'center',
                 marginBottom: '50px',
                 paddingTop: '80px'
-
             }}>
                 About Us
             </Typography>
@@ -22,7 +21,7 @@ const About = () => {
             <Grid container sx={{
                 paddingX: 7,
                 marginX: 'auto',
-              
+
             }}>
                 <Grid item xs={12} md={6} lg={6} columnSpacing={{ xs: 1, sm: 2, md: 3, lg: 4 }}>
                     <Typography variant='h5' textTransform={'uppercase'} color={'primary'} paddingBottom={2}>
@@ -76,7 +75,8 @@ const About = () => {
                         <Box sx={{
                             display: 'flex',
                             alignItems: 'center',
-                            gap: 2
+                            gap: 2,
+                            marginBottom: { xs: '50px', lg: '0px', md: '0' }
                         }}>
                             <WifiCalling3Icon sx={{
                                 width: '50px',
@@ -94,15 +94,17 @@ const About = () => {
                             }} />
                             <Box>
                                 <Typography sx={{ fontSize: '12px', color: 'gray' }}>CALL ANYTIME</Typography>
-                                <Typography sx={{ fontWeight: 'bold', color: 'gray',}}>+88 ( 8800 ) - 3280</Typography>
+                                <Typography sx={{ fontWeight: 'bold', color: 'gray' }}>+88 ( 8800 ) - 3280</Typography>
                             </Box>
                         </Box>
                     </Grid>
 
                 </Grid>
-                <Grid item xs={12} md={6} lg={6}>
-                    <Box sx={{ width:{xs:'100%', lg:550}, height:{lg:'90%', md:'100%',  xs:300},marginLeft:{lg:'5rem'}}}>
-                        <img style={{width: '100%', height: '100%'}} src="https://i.ibb.co/tqwrfbj/aboutImg.jpg" alt="" />
+                <Grid item xs={12} md={6} lg={6} sx={{
+                    marginBottom: {xs:'80px', lg:'0', md:'0'}
+                }}>
+                    <Box sx={{ width: { xs: '100%', lg: 550 }, height: { lg: '90%', md: '100%', xs: 300 }, marginLeft: { lg: '5rem' } }}>
+                        <img style={{ width: '100%', height: '100%' }} src="https://i.ibb.co/tqwrfbj/aboutImg.jpg" alt="" />
                     </Box>
                 </Grid>
             </Grid>

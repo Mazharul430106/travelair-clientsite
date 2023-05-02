@@ -69,9 +69,6 @@ export default function Navbar(props) {
                 {
                     bgcolor: 'white',
                     color: 'black',
-                    // '&:hover':{
-                    //     color: '#33bccd'
-                    // }
                 }
             }>
                 <Toolbar>

@@ -2,6 +2,10 @@
     text-align: start;
 }
 
-.css-k008qs{
-    
+.MuiToolbar-root{
+    padding: 0 50px;
 }
+
+/* .MuiToolbar-gutters{
+    padding: 0 50px;
+} */
