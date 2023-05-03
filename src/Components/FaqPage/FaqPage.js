@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Accordion, AccordionDetails, AccordionSummary, Box, Grid, Typography } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Box, Button, Grid, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const FaqPage = () => {
@@ -18,7 +18,7 @@ const FaqPage = () => {
                     paddingTop: '80px',
                     paddingBottom: '50px'
                 }}>
-                    Popular Questions
+                    Frequently Asked Questions
                 </Typography>
             </Box>
 
@@ -139,6 +139,22 @@ const FaqPage = () => {
                     </Accordion>
                 </Grid>
             </Grid>
+
+            <Box sx={{
+                textAlign: 'center',
+                paddingTop: '70px'
+            }}>
+                <Button variant='contained' sx={{
+                    width: '100%',
+                    maxWidth: '200px',
+                    padding: '15px 0',
+                    fontWeight: 600,
+                    color: '#fff'
+
+                }}>Read More</Button>
+            </Box>
+
+
         </Box>
     );
 };

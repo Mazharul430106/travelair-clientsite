@@ -30,22 +30,22 @@ const Contact = () => {
                     <form action="">
                         <Grid container spacing={2}>
                             <Grid item xs={12} md={6} lg={6}>
-                                <TextField fullWidth id="outlined-basic" label="Fast Name" variant="outlined" />
+                                <TextField fullWidth id="outlined-basic" label="Fast Name" variant="outlined" placeholder='Fast_Name' />
                             </Grid>
                             <Grid item xs={12} md={6} lg={6}>
-                                <TextField fullWidth id="outlined-basic" label="Last Name" variant="outlined" />
+                                <TextField fullWidth id="outlined-basic" label="Last Name" variant="outlined" placeholder='Last_Name' />
                             </Grid>
                             <Grid item xs={12} md={6} lg={6}>
-                                <TextField fullWidth id="outlined-basic" label="Email" type='email' variant="outlined" />
+                                <TextField fullWidth id="outlined-basic" label="Email" type='email' variant="outlined" placeholder='Enter Your Email' />
                             </Grid>
                             <Grid item xs={12} md={6} lg={6}>
-                                <TextField fullWidth id="outlined-basic" label="Password" type='password' variant="outlined" />
+                                <TextField fullWidth id="outlined-basic" label="Password" type='password' variant="outlined" placeholder='Enter Your Password' />
                             </Grid>
                             <Grid item xs={12} md={12} lg={12}>
-                                <TextField multiline rows={5} fullWidth id="outlined-basic" label="Message" type='password' variant="outlined" />
+                                <TextField multiline rows={5} fullWidth id="outlined-basic" label="Message" type='text' variant="outlined" placeholder='Type Here.....' />
                             </Grid>
                             <Grid item xs={12} md={12} lg={12}>
-                                <Button variant='contained' fullWidth sx={{paddingY:2, fontWeight: 700, '&:hover':{color: '#fff'}}}>Submit</Button>
+                                <Button variant='contained' fullWidth sx={{paddingY:2, fontWeight: 700, color: '#fff'}}>Submit</Button>
                             </Grid>
                         </Grid>
 
