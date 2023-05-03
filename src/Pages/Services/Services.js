@@ -41,9 +41,17 @@ const Services = () => {
                                     {service.desc}
                                 </Typography>
                             </CardContent>
-                            <CardActions>
-                                <Button size="small"><Link to={`/checkoutPage/${service._id}`}>Learn More</Link></Button>
-                            </CardActions>
+                            <Box sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                paddingX:'17px',
+                                paddingBottom:'30px',
+                                paddingTop:'10px'
+                            }}>
+                                <Button hover={{color:'priamry'}} variant='outlined' size="medium"><Link to={`/checkoutPage/${service._id}`}>Learn More</Link></Button>
+                                <Button variant='outlined' size="medium"><Link to={`/checkoutPage/${service._id}`}>Book Now</Link></Button>
+                            </Box>
                         </Card>
                     </Grid>)
                 }

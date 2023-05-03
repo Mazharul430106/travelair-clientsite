@@ -13,9 +13,6 @@ const Register = () => {
     const { register, handleSubmit } = useForm();
     const {createUser, updateUserProfile, verifyEmail} = useContext(AuthContext);
     
-  
-
-
     const handleRegisterForm = (data, event) => {
         // console.log(data);
 

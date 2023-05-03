@@ -1,7 +1,8 @@
 import { LineWeight } from '@mui/icons-material';
-import { Box, CardMedia, Grid, Typography } from '@mui/material';
+import { Box, Button, CardMedia, FormControl, Grid, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material';
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import ServiceReview from '../../Components/ServiceReview/ServiceReview';
 
 const CheckOutPage = () => {
 
@@ -12,7 +13,7 @@ const CheckOutPage = () => {
     return (
         <Box>
             <Box sx={{
-                paddingY:'150px',
+                paddingY: '150px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -76,7 +77,7 @@ const CheckOutPage = () => {
 
                     </Grid>
                 </Grid>
-
+                
             </Box>
 
             <Box paddingX={7} marginTop={10}>
@@ -133,19 +134,19 @@ const CheckOutPage = () => {
                             <Typography sx={{
                                 fontSize: { lg: '47px', md: '47px', xs: '35px' },
                                 paddingTop: '35px',
-                                paddingBottom:'15px'
+                                paddingBottom: '15px'
                             }}>
                                 Comfort & Size
                             </Typography>
 
                             <Typography sx={{
-                                fontSize:'18px'
+                                fontSize: '18px'
                             }}>
                                 No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure. Advice branch vanity or do thirty living. Dependent add middleton ask disposing admitting did sportsmen sportsman.
                             </Typography>
                             <br />
                             <Typography sx={{
-                                fontSize:'18px'
+                                fontSize: '18px'
                             }}>
                                 No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure. Advice branch vanity or do thirty living. Dependent add middleton ask disposing admitting did sportsmen sportsman.
                             </Typography>
@@ -155,10 +156,7 @@ const CheckOutPage = () => {
                 </Grid>
             </Box>
 
-            
-
-
-
+            <ServiceReview></ServiceReview>
 
         </Box>
     );
